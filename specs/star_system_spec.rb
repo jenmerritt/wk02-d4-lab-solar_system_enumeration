@@ -22,40 +22,40 @@ class TestStarSystem < Minitest::Test
     @solar_system = StarSystem.new("Solar System", @planets)
   end
 
-  # def test_has_name
-  #   assert_equal("Solar System", @solar_system.name)
-  # end
-  #
-  # def test_has_planets
-  #   assert_equal(9, @solar_system.planets.count)
-  # end
-  #
-  # def test_planet_names
-  #   expected_names = ["Earth", "Jupiter", "Mars", "Mercury", "Neptune", "Pluto", "Saturn", "Uranus", "Venus"]
-  #   assert_equal(expected_names, @solar_system.planet_names)
-  # end
-  #
-  # def test_get_planet_by_name
-  #   result = @solar_system.get_planet_by_name("Mars")
-  #   assert_equal(@mars, result)
-  # end
-  #
-  # def test_get_largest_planet
-  #   result = @solar_system.get_largest_planet
-  #   assert_equal(@jupiter, result)
-  # end
-  #
-  # def test_get_smallest_planet
-  #   result = @solar_system.get_smallest_planet
-  #   assert_equal(@pluto, result)
-  # end
-  #
-  # def test_get_planets_with_no_moons
-  #   expected_planets = [ @mercury, @venus ]
-  #   result = @solar_system.get_planets_with_no_moons
-  #   assert_equal(expected_planets, result)
-  # end
-  #
+  def test_has_name
+    assert_equal("Solar System", @solar_system.name)
+  end
+
+  def test_has_planets
+    assert_equal(9, @solar_system.planets.count)
+  end
+
+  def test_planet_names
+    expected_names = ["Earth", "Jupiter", "Mars", "Mercury", "Neptune", "Pluto", "Saturn", "Uranus", "Venus"]
+    assert_equal(expected_names, @solar_system.planet_names)
+  end
+
+  def test_get_planet_by_name
+    result = @solar_system.get_planet_by_name("Mars")
+    assert_equal(@mars, result)
+  end
+
+  def test_get_largest_planet
+    result = @solar_system.get_largest_planet
+    assert_equal(@jupiter, result)
+  end
+
+  def test_get_smallest_planet
+    result = @solar_system.get_smallest_planet
+    assert_equal(@pluto, result)
+  end
+
+  def test_get_planets_with_no_moons
+    expected_planets = [ @mercury, @venus ]
+    result = @solar_system.get_planets_with_no_moons
+    assert_equal(expected_planets, result)
+  end
+
   # def test_get_names_of_planet_with_more_than_four_moons
   #   expected_names = ["Jupiter", "Neptune", "Saturn", "Uranus"]
   #   result = @solar_system.get_planets_with_more_moons(4)
