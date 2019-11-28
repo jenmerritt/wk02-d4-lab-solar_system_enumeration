@@ -58,4 +58,10 @@ class StarSystem
     return total_number_of_moons
   end
 
+  def get_planet_names_sorted_by_increasing_distance_from_sun
+    planets_sorted_by_distance = @planets.sort { |closest, current_planet| closest.distance_from_sun <=> current_planet.distance_from_sun }
+    names_of_planets_sorted_by_distance = planets_sorted_by_distance.map { |planet| planet.name }
+    return names_of_planets_sorted_by_distance
+  end
+
 end
