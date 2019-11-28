@@ -28,7 +28,7 @@ class StarSystem
 # match bigger_planet and planet order in pipes and in method after. Otherwise it returns minimum!!
 
   def get_largest_planet
-    largest_planet = @planets.max() { |bigger_planet, planet | bigger_planet.diameter <=> planet.diameter}
+    largest_planet = @planets.max() { | bigger_planet, planet | bigger_planet.diameter <=> planet.diameter}
     return largest_planet
   end
 
@@ -44,7 +44,13 @@ class StarSystem
 
   def get_planets_with_more_moons(number)
     planets_with_more_moons = @planets.find_all { |planet| planet.number_of_moons > number }
-    return planets_with_more_moons
+    names_of_planets_with_more_moons = planets_with_more_moons.map { |planet| planet.name }
+    return names_of_planets_with_more_moons
+  end
+
+  def get_number_of_planets_closer_than(distance)
+    planets_closer_than = @planets.find_all { |planet| planet.distance_from_sun < distance }
+    return planets_closer_than.count
   end
 
 end
