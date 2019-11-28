@@ -64,4 +64,16 @@ class StarSystem
     return names_of_planets_sorted_by_distance
   end
 
+  # def get_planet_names_sorted_by_size_decreasing
+  #   planets_sorted_by_size = @planets.sort { |smallest, current_planet| current_planet.diameter <=> smallest.diameter }
+  #   names_of_planets_sorted_by_size = planets_sorted_by_size.map { |planet| planet.name }
+  #   return names_of_planets_sorted_by_size
+  # end
+  
+  def get_planet_names_sorted_by_size_decreasing
+    planets_sorted_by_size = @planets.sort { |smallest, current_planet| smallest.diameter <=> current_planet.diameter  }
+    names_of_planets_sorted_by_size = planets_sorted_by_size.reverse.map { |planet| planet.name }
+    return names_of_planets_sorted_by_size
+  end
+
 end
