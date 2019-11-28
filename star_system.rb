@@ -53,4 +53,9 @@ class StarSystem
     return planets_closer_than.count
   end
 
+  def get_total_number_of_moons
+    total_number_of_moons = @planets.reduce(0) { |running_total, current_planet| running_total + current_planet.number_of_moons }
+    return total_number_of_moons
+  end
+
 end
