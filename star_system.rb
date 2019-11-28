@@ -37,4 +37,9 @@ class StarSystem
     return smallest_planet
   end
 
+  def get_planets_with_no_moons
+    planets_with_no_moons = @planets.find_all { |planet| planet.number_of_moons == 0}
+    return planets_with_no_moons
+  end
+
 end
